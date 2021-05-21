@@ -1,8 +1,11 @@
 package com.company;
 
+import com.ucreativa.familia.alvaro;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello world");
+
+        alvaro comelon = new alvaro();
     }
 }
