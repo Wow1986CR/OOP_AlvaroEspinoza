@@ -9,5 +9,10 @@ public class Main {
 
         Alvaro comelon = new Alvaro();
         Lizbeth saludando = new Lizbeth("Hola hola");
+        saludando.setAge(67);
+        int edadMami = saludando.getAge();
+        System.out.println(edadMami);
+
+
     }
 }
