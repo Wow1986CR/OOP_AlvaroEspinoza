@@ -1,6 +1,6 @@
 package com.ucreativa;
 
-import familia.Alvaro;
+import com.ucreativa.familia.Alvaro;
 
 public class Main {
 

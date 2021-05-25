@@ -1,4 +1,4 @@
-package familia;
+package com.ucreativa.familia;
 
 public class Alvaro {
 
