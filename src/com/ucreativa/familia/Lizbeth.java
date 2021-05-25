@@ -2,9 +2,12 @@ package com.ucreativa.familia;
 
 public class Lizbeth {
 
-    private int age = 1;
-    private String hobby = "charlar";
+    private int age ;
+    private String hobby ;
+
     public Lizbeth (String saludo){
+        age = 1;
+        hobby = "Chat";
         System.out.println(saludo);
     }
     public int getAge() {
@@ -15,6 +18,9 @@ public class Lizbeth {
         this.age = age + 1;
     }
 
+    public String getHobby() {
+        return hobby;
+    }
 
 
 }
