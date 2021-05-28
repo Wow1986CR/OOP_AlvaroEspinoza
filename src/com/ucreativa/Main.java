@@ -7,8 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Alvaro comelon = new Alvaro();
-        Lizbeth mama = new Lizbeth("Hello hello");
+        Alvaro comelon = new Alvaro("Holis",35,"Reading");
+        Lizbeth mama = new Lizbeth("Hello hello", 65, "Chat");
 
         mama.setAge(67);
         int ageMami = mama.getAge();

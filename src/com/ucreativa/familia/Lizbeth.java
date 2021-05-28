@@ -5,9 +5,9 @@ public class Lizbeth {
     private int age ;
     private String hobby ;
 
-    public Lizbeth (String saludo){
-        age = 1;
-        hobby = "Chat";
+    public Lizbeth (String saludo, int age, String hobby){
+        this.age = age;
+        this.hobby = hobby;
         System.out.println(saludo);
     }
     public int getAge() {
