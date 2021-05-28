@@ -5,8 +5,10 @@ public class Amigo extends Persona{
    private String facebook;
 
 
-    public Amigo(String name, String id, int age, boolean risk) {
+    public Amigo(String name, String id, int age, boolean risk, String relationship, String facebook) {
         super(name, id, age, risk);
+        this.relationship = relationship;
+        this.facebook = facebook;
     }
 
     public String getRelationship() {
