@@ -30,7 +30,7 @@ public class Persona {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        this.age = this.age+1;
     }
 
     public void setRisk(boolean risk) {
