@@ -1,24 +1,22 @@
 package com.ucreativa.vacunacion;
 
 import com.ucreativa.vacunacion.entities.Amigo;
-import com.ucreativa.vacunacion.entities.BitacoraVacunas;
 import com.ucreativa.vacunacion.entities.Familiar;
 import com.ucreativa.vacunacion.entities.Persona;
+import com.ucreativa.vacunacion.repositories.InMemoryRepository;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        List<BitacoraVacunas> db = new ArrayList<>();
+        InMemoryRepository repo = new InMemoryRepository();
+        Scanner in = new Scanner(System.in);
+        Persona person;
+        String name, idNumber, age, risk, isFriend, friendRelationship, facebookAccount, relationship, brand;
         while (true) {
-            Scanner in = new Scanner(System.in);
-            String name, idNumber, age, risk, isFriend, friendRelationship, facebookAccount, relationship, brand;
-            Persona person;
             System.out.println("Name:");
             name = in.nextLine();
             System.out.println("ID Number:");
@@ -43,13 +41,13 @@ public class Main {
             System.out.println("Vaccine -- Brand:");
             brand = in.nextLine();
 
-            db.add(new BitacoraVacunas(person, brand, new Date()));
+            repo.save(person, brand, new Date());
 
             System.out.println("Do you want to print the list? (Y)");
             String print = in.nextLine();
             if (print.equals("Y")) {
-                for (BitacoraVacunas item : db) {
-                    System.out.println(item.getPerson().getName() + " vaccinated on " + item.getDate());
+                for (String item : repo.get()) {
+                    System.out.println(item);
                 }
             }
         }
