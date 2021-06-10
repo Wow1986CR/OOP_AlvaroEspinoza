@@ -3,7 +3,9 @@ package com.ucreativa.vacunacion;
 import com.ucreativa.vacunacion.entities.Amigo;
 import com.ucreativa.vacunacion.entities.Familiar;
 import com.ucreativa.vacunacion.entities.Persona;
+import com.ucreativa.vacunacion.repositories.FileRepository;
 import com.ucreativa.vacunacion.repositories.InMemoryRepository;
+import com.ucreativa.vacunacion.repositories.Repository;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -12,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        InMemoryRepository repo = new InMemoryRepository();
+        Repository repo = new FileRepository();
         Scanner in = new Scanner(System.in);
         Persona person;
         String name, idNumber, age, risk, isFriend, friendRelationship, facebookAccount, relationship, brand;
