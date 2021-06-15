@@ -16,17 +16,15 @@ public class BitacoraService {
     }
 
 
-    public void save(String name, String idNumber, String age, String risk,
-                     String isFriend, String friendRelationship,
+    public void save(String name, String idNumber, String age, boolean risk,
+                     boolean isFriend, String friendRelationship,
                      String facebookAccount, String relationship, String brand){
         int ageInteger = Integer.parseInt(age);
-        boolean isFriendBoolean = isFriend.equals("A");
-        boolean isRiskBoolean = risk.equals("Y");
         Persona persona;
-        if (isFriendBoolean){
-            persona = new Amigo(name, idNumber, ageInteger, isRiskBoolean, friendRelationship, facebookAccount);
+        if (isFriend){
+            persona = new Amigo(name, idNumber, ageInteger, risk, friendRelationship, facebookAccount);
         }else{
-            persona = new Familiar(name, idNumber, ageInteger, isRiskBoolean, relationship);
+            persona = new Familiar(name, idNumber, ageInteger, risk, relationship);
         }
         this.repository.save(persona,brand,new Date());
     }
