@@ -1,6 +1,6 @@
 package com.ucreativa.vacunacion.entities;
 
-public class Persona {
+public abstract class Persona {
     private String name;
     private String id;
     private int age;

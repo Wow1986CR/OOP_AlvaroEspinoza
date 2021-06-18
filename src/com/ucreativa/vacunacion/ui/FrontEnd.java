@@ -69,24 +69,28 @@ public class FrontEnd extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 BitacoraService service = new BitacoraService(new FileRepository());
-                service.save(txtName.getText(),txtIDNumber.getText(),
-                        txtAge.getText(), txtRisk.isSelected(),
-                        txtIsFriend.isSelected(),txtFriendRelationship.getText(),
-                        txtFaceBookAcct.getText(),txtRelationship.getText(),
-                        txtBrand.getText());
+                try {
+                    service.save(txtName.getText(),txtIDNumber.getText(),
+                            txtAge.getText(), txtRisk.isSelected(),
+                            txtIsFriend.isSelected(),txtFriendRelationship.getText(),
+                            txtFaceBookAcct.getText(),txtRelationship.getText(),
+                            txtBrand.getText());
 
-                txtName.setText(""); ;
-                txtIDNumber.setText("");
-                txtAge.setText("");
-                txtRisk.setText("");
-                txtIsFriend.setText("");
-                txtFriendRelationship.setText("");
-                txtFaceBookAcct.setText("");
-                txtRelationship.setText("");
-                txtBrand.setText("");
+                    txtName.setText(""); ;
+                    txtIDNumber.setText("");
+                    txtAge.setText("");
+                    txtRisk.setText("");
+                    txtIsFriend.setText("");
+                    txtFriendRelationship.setText("");
+                    txtFaceBookAcct.setText("");
+                    txtRelationship.setText("");
+                    txtBrand.setText("");
 
-                String report = String.join("n",service.get());
-                JOptionPane.showMessageDialog(((JButton)e.getSource()).getParent(),report);
+                    String report = String.join("n",service.get());
+                    JOptionPane.showMessageDialog(((JButton)e.getSource()).getParent(),report);
+                } catch (ErrorEdadException error) {
+                    JOptionPane.showMessageDialog(((JButton)e.getSource()).getParent(),error.getMessage());
+                }
             }
         });
 
